@@ -1,5 +1,4 @@
 import * as React from "react";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
@@ -22,8 +21,13 @@ import {
 import MainNavigator from "./src/navigation";
 import CustomToast from "./src/components/Toast";
 
+//toast utils
+const toastRef = React.createRef<any>();
+export const showToast = (text: string) => {
+  toastRef.current?.show(text);
+};
+
 export default function App() {
-  const toastRef = React.createRef<any>();
   const [isLoading, setIsLoading] = React.useState(true);
   const [loadedFonts] = useFonts({
     Alegreya: Alegreya_400Regular,
@@ -76,7 +80,7 @@ export default function App() {
     <SafeAreaProvider style={styles.container}>
       <MainNavigator />
       <CustomToast {...{ ref: toastRef }} />
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
     </SafeAreaProvider>
   );
 }
