@@ -1,7 +1,7 @@
 export const DEMOS = [
   {
     name: "Clock",
-    component: "ClockScreen"
+    component: "ClockStack"
   },
   {
     name: "Weather",

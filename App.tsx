@@ -17,9 +17,13 @@ import {
   Lato_400Regular_Italic,
   useFonts
 } from "@expo-google-fonts/lato";
+import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux";
 
 import MainNavigator from "./src/navigation";
 import CustomToast from "./src/components/Toast";
+
+import { persistor, store } from "~/store";
 
 //toast utils
 const toastRef = React.createRef<any>();
@@ -77,11 +81,15 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider style={styles.container}>
-      <MainNavigator />
-      <CustomToast {...{ ref: toastRef }} />
-      {/* <StatusBar style="auto" /> */}
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaProvider style={styles.container}>
+          <MainNavigator />
+          <CustomToast {...{ ref: toastRef }} />
+          {/* <StatusBar style="auto" /> */}
+        </SafeAreaProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 

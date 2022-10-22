@@ -1,4 +1,6 @@
 import { Dimensions } from "react-native";
+
+import { COLORS } from "./colors";
 const { width, height } = Dimensions.get("window");
 
 export const SIZES = {
@@ -27,6 +29,30 @@ export const SIZES = {
   height
 };
 
+/**
+ * Languages
+ */
+export const SUPPORTED_LANGUAGES = ["en", "es"];
+export const FALLBACK_LANGUAGE = "en";
+
+/**
+ * Date and times
+ */
+export const AM_PM = "am_pm";
+export const H24 = "24h";
+
+/**
+ * Config
+ */
+export const DEFAULT_CONFIG = {
+  timeFont: "Lato",
+  timeFormat: H24,
+  timeColor: COLORS.lightGray,
+  showSeconds: false,
+  showDate: true,
+  showBattery: true
+};
+
 export const FONTS = {
   largeTitle: { fontFamily: "AlegreyaBlack", fontSize: SIZES.largeTitle },
   h1: { fontFamily: "AlegreyaBold", fontSize: SIZES.h1, lineHeight: 36 },
@@ -46,6 +72,14 @@ export const FONTS = {
   body6: { fontFamily: "LatoThin", fontSize: SIZES.body5, lineHeight: 22 }
 };
 
-const appTheme = { SIZES, FONTS };
+const appTheme = {
+  SIZES,
+  FONTS,
+  SUPPORTED_LANGUAGES,
+  FALLBACK_LANGUAGE,
+  AM_PM,
+  H24,
+  DEFAULT_CONFIG
+};
 
 export default appTheme;
