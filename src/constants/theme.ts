@@ -53,6 +53,23 @@ export const DEFAULT_CONFIG = {
   showBattery: true
 };
 
+// Available fonts
+export const APP_FONTS = [
+  "Alegreya",
+  "AlegreyaItalic",
+  "AlegreyaSemiBold",
+  "LatoThin",
+  "Lato"
+];
+
+export const APP_COLORS = [
+  COLORS.lightGray,
+  COLORS.primary,
+  COLORS.secondary,
+  COLORS.error,
+  COLORS.success
+];
+
 export const FONTS = {
   largeTitle: { fontFamily: "AlegreyaBlack", fontSize: SIZES.largeTitle },
   h1: { fontFamily: "AlegreyaBold", fontSize: SIZES.h1, lineHeight: 36 },
