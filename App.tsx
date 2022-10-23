@@ -22,8 +22,7 @@ import { Provider } from "react-redux";
 
 import MainNavigator from "./src/navigation";
 import CustomToast from "./src/components/Toast";
-
-import { persistor, store } from "~/store";
+import { persistor, store } from "./src/store";
 
 //toast utils
 const toastRef = React.createRef<any>();
