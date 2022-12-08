@@ -3,5 +3,6 @@ export enum RouteKeys {
   Clock = "ClockStack",
   StopWatch = "StopWatch",
   MainClock = "MainClock",
+  NeuStopwatch = "NeuStopwatch",
   Settings = "Settings"
 }

@@ -48,7 +48,7 @@ interface ScreenItemProps {
 }
 const ScreenItem = ({ data, isGrid, onScreenClicked }: ScreenItemProps) => {
   const { index, item } = data;
-  const ITEM_WIDTH = isGrid ? (SIZES.width - 36) / 2 : SIZES.width - 24;
+  const ITEM_SIZE = isGrid ? (SIZES.width - 36) / 2 : SIZES.width - 24;
   const translateY = React.useRef<Animated.Value>(
     new Animated.Value(50)
   ).current;
@@ -75,8 +75,8 @@ const ScreenItem = ({ data, isGrid, onScreenClicked }: ScreenItemProps) => {
   return (
     <Animated.View
       style={{
-        width: ITEM_WIDTH,
-        height: ITEM_WIDTH,
+        width: ITEM_SIZE,
+        height: ITEM_SIZE,
         margin: 8,
         transform: [{ translateY }]
       }}

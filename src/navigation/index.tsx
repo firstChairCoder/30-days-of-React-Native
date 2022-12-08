@@ -9,6 +9,7 @@ import { RouteKeys } from "./RouteKeys";
 import { MainClockScreen } from "~/screens/MainClockScreen";
 import { StopWatchScreen } from "~/screens/StopWatchScreen";
 import { SettingsScreen } from "~/screens/SettingsScreen";
+import StopWatch from "~/screens/StopWatch";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -41,6 +42,7 @@ function MainNavigator() {
         <Navigator screenOptions={{ headerShown: false }}>
           <Screen name={RouteKeys.Home} component={HomeScreen} />
           <Screen name={RouteKeys.Clock} component={ClockStackNavigator} />
+          <Screen name={RouteKeys.NeuStopwatch} component={StopWatch} />
         </Navigator>
       </NavigationContainer>
     </>

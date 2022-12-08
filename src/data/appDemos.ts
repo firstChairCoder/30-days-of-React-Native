@@ -8,8 +8,8 @@ export const DEMOS = [
     component: ""
   },
   {
-    name: "Blank",
-    component: ""
+    name: "NeuStopwatch",
+    component: "NeuStopwatch"
   },
   {
     name: "Blank2",

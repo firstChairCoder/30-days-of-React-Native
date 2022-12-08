@@ -85,7 +85,6 @@ export default function App() {
         <SafeAreaProvider style={styles.container}>
           <MainNavigator />
           <CustomToast {...{ ref: toastRef }} />
-          {/* <StatusBar style="auto" /> */}
         </SafeAreaProvider>
       </PersistGate>
     </Provider>
