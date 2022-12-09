@@ -1,19 +1,27 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { ReactNode } from "react";
 import React, { createContext, useState } from "react";
 
-type ThemeType = "light" | "dark" | "coffee";
-const themes: ThemeType[] = ["light", "dark", "coffee"];
+import type { ITheme } from "../constants";
+import { themes } from "../constants";
 
-// export const CustomThemeContext = createContext<
-//   { theme: ThemeType; changeTheme: (val: ThemeType) => void } | undefined
-// >(undefined);
-const CustomThemeContext = createContext(); //TODO: Properly type this
+type ThemeNameType = "light" | "dark" | "coffee";
+const CustomThemeContext = createContext<{
+  theme: ITheme;
+  changeTheme: (val: ThemeNameType) => void;
+}>(null as any); //TODO: Still Properly type this
 
 const CustomThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<ThemeType>("light");
+  //@ts-ignore
+  const [theme, setTheme] = useState<ITheme>(themes[0]);
 
-  const changeTheme = (val: ThemeType) => {
-    setTheme(val);
+  const changeTheme = (val: ThemeNameType) => {
+    val === "light"
+      ? setTheme(themes[0])
+      : val === "dark"
+      ? setTheme(themes[1])
+      : setTheme(themes[2]);
   };
 
   const value = { theme, changeTheme };

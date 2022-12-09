@@ -29,3 +29,64 @@ export const COLORS = {
 
   error: "#F6565E"
 };
+
+const palette = {
+  white: "#FFFFFF",
+  black: "#091A28",
+  red: "red",
+  red300: "#FCA5A5",
+  slate300: "#CBC4D1",
+  beige300: "#F1E7D0",
+  blue90: "#233254",
+  green200: "#00835C",
+  green500: "#20C997",
+  green800: "#004732"
+};
+
+export interface ITheme {
+  name: string;
+  colors: {
+    stop: string;
+    reset: string;
+    $foreground: string;
+    $background: string;
+    $alternate: string;
+    $primary: string;
+    $base: string;
+  };
+}
+
+const lightTheme: ITheme = {
+  name: "light",
+  colors: {
+    stop: palette.red,
+    reset: palette.red300,
+    $foreground: palette.slate300,
+    $background: palette.white,
+    $alternate: palette.green200,
+    $primary: palette.blue90,
+    $base: palette.black
+  }
+};
+
+const darkTheme: ITheme = {
+  name: "dark",
+  colors: {
+    ...lightTheme.colors,
+    $background: palette.black,
+    $alternate: palette.green500,
+    $base: palette.white,
+    $primary: palette.white
+  }
+};
+
+const coffeeTheme: ITheme = {
+  name: "coffee",
+  colors: {
+    ...lightTheme.colors,
+    $background: palette.beige300,
+    $alternate: palette.green800
+  }
+};
+
+export const themes = [lightTheme, darkTheme, coffeeTheme];
