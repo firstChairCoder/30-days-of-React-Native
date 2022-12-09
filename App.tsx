@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import {
   Alegreya_400Regular,
@@ -15,14 +14,17 @@ import {
   Lato_300Light,
   Lato_400Regular,
   Lato_400Regular_Italic,
+  Lato_700Bold,
   useFonts
 } from "@expo-google-fonts/lato";
-import { PersistGate } from "redux-persist/integration/react";
+// import { DateTime } from "luxon"; TODO: use eas, meanwhile use Moment
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { persistor, store } from "./src/store";
 import MainNavigator from "./src/navigation";
 import CustomToast from "./src/components/Toast";
-import { persistor, store } from "./src/store";
 
 //toast utils
 const toastRef = React.createRef<any>();
@@ -42,7 +44,8 @@ export default function App() {
     LatoThin: Lato_100Thin,
     LatoLight: Lato_300Light,
     Lato: Lato_400Regular,
-    LatoItalic: Lato_400Regular_Italic
+    LatoItalic: Lato_400Regular_Italic,
+    LatoBold: Lato_700Bold
   });
 
   React.useEffect(() => {
