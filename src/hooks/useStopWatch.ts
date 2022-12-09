@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
 
 import useInterval from "./useInterval";
@@ -9,14 +8,13 @@ export default function useStopWatch() {
   const [isStarted, setIsStarted] = useState(false);
   const [pastTime, setPastTime] = useState(new Date());
   const [seconds, setSeconds] = useState(
-    Time.getSecondsFromPastTime(pastTime || 0)
+    currentTime + Time.getSecondsFromPastTime(pastTime || 0)
   );
 
   useInterval(
     () => {
       setSeconds(currentTime + Time.getSecondsFromPastTime(pastTime));
     },
-    //@ts-ignore //NOTE: No idea why TS is crying here
     isStarted ? 1000 : null
   );
 
@@ -25,13 +23,13 @@ export default function useStopWatch() {
       const currentPastTime = new Date();
       setPastTime(currentPastTime);
       setIsStarted(true);
-      setSeconds(currentTime + Time.getSecondsFromPastTime(currentPastTime));
+      setSeconds(0 + Time.getSecondsFromPastTime(currentPastTime));
     },
     reset: () => {
       const currentPastTime = new Date();
       setPastTime(currentPastTime);
       setCurrentTime(0);
-      setSeconds(Time.getSecondsFromPastTime(currentPastTime));
+      setSeconds(currentTime + Time.getSecondsFromPastTime(currentPastTime));
     },
     pause: () => {
       setCurrentTime(seconds);
@@ -41,6 +39,7 @@ export default function useStopWatch() {
 
   return {
     ...Time.getTimeFromSeconds(seconds),
-    controls
+    controls,
+    isStarted
   };
 }
