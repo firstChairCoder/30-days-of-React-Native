@@ -12,12 +12,12 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import useStopWatch from "~/hooks/useStopWatch";
 import {
   CustomThemeContext,
   CustomThemeProvider
-} from "../store/CustomThemeProvider";
-import useStopWatch from "../hooks/useStopWatch";
-import formatTimeAsString from "../utils/formatTime";
+} from "~/store/CustomThemeProvider";
+import formatTimeAsString from "~/utils/formatTime";
 
 const { width, height } = Dimensions.get("window");
 const TIMER_SIZE = width * 0.7;

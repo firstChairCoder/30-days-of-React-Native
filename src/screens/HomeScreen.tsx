@@ -17,13 +17,13 @@ import {
   useSafeAreaInsets
 } from "react-native-safe-area-context";
 import { MaterialIcons as Icon } from "@expo/vector-icons";
+// eslint-disable-next-line import/order
 import { useHeaderHeight } from "@react-navigation/elements";
 
-import { COLORS, FONTS, SIZES } from "~/constants";
-// eslint-disable-next-line import/order
-import { DEMOS } from "~/data/appDemos";
-// eslint-disable-next-line import/order
 import { showToast } from "App";
+
+import { COLORS, FONTS, SIZES } from "~/constants";
+import { DEMOS } from "~/data/appDemos";
 
 const styles = StyleSheet.create({
   header: {

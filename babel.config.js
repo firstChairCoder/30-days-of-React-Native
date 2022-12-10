@@ -18,6 +18,7 @@ module.exports = function(api) {
           ],
           root: ['./'],
           alias: {
+            // This needs to be mirrored in tsconfig.json
             '~/assets': './assets',
             '~/components': './src/components',
             '~/constants': './src/constants',
@@ -25,7 +26,7 @@ module.exports = function(api) {
             '~/env': './env',
             '~/screens': './src/screens',
             '~/navigation': './src/navigation',
-            '~/redux': './src/redux',
+            '~/store': './src/store',
             '~/translations': './src/translations',
             "underscore": 'lodash'
           },

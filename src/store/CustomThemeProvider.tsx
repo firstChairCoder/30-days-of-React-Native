@@ -3,8 +3,8 @@
 import type { ReactNode } from "react";
 import React, { createContext, useState } from "react";
 
-import type { ITheme } from "../constants";
-import { themes } from "../constants";
+import type { ITheme } from "~/constants";
+import { themes } from "~/constants";
 
 type ThemeNameType = "light" | "dark" | "coffee";
 const CustomThemeContext = createContext<{

@@ -3,7 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      //mirrored!
+      "~/*": ["./src/*"],
+      "~/assets": ["./assets"],
+            "~/components": ["./src/components"],
+            "~/constants": ["./src/constants"],
+            "~/data": ["./src/data"],
+            "~/env": ["./env"],
+            "~/screens": ["./src/screens"],
+            "~/navigation": ["./src/navigation"],
+            "~/store": ["./src/store"],
+            "~/translations": ["./src/translations"],
     }
   },
   "exclude": ["node_modules"]

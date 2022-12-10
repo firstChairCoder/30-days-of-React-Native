@@ -17,14 +17,13 @@ import {
   Lato_700Bold,
   useFonts
 } from "@expo-google-fonts/lato";
-// import { DateTime } from "luxon"; TODO: use eas, meanwhile use Moment
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { persistor, store } from "./src/store";
-import MainNavigator from "./src/navigation";
-import CustomToast from "./src/components/Toast";
+import { persistor, store } from "~/store";
+import MainNavigator from "~/navigation";
+import CustomToast from "~/components/Toast";
 
 //toast utils
 const toastRef = React.createRef<any>();
